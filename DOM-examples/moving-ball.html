@@ -26,33 +26,51 @@
 		<div id="ball"></div>
 	</div>
 
+	<!-- button that call start function on click -->
 	<button onClick="start()">Start</button>
+	<!-- button that call stop function on click -->
 	<button onClick="stop()">Stop</button>
 
 	<script>
+		
 		let ball = document.querySelector("#ball")
+		// set the left variable 0
 		let left = 0
+		// set the direction variable to right
 		let direction = "right"
 
+		// store the result from setInterval() in a variable
+		// setInterval() take move() as parameter 
 		let interval = setInterval(move, 10)
 
+		// Created a callback function called move
 		function move() {
+			// Check if the direction is "right"
 			if(direction === "right") {
+				// if yes, move to the left by one
 				left += 1
+				// Change the direction to "left" if left is greater than 790 px
 				if(left > 790) direction = "left"
 			} else {
+				// if not, move to the right by moving back left by one
 				left -= 1
+				// Change the direction to "right" if left is less than 1 px
 				if(left < 1) direction = "right"
 			}
 
+			// Change the ball style left to 100 px
 			ball.style.left = `${left}px`
 		}
 
+		// This function move the ball
 		function start() {
+			// Call the setInterval() with parameters and store it in a variable
 			interval = setInterval(move, 10)
 		}
 
+		// This function stop the moving ball
 		function stop() {
+			// Call the clearInterval() with interval parameters to stop the ball
 			clearInterval(interval)
 		}
 	</script>
