@@ -7,6 +7,9 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="box">
+        An Element.
+    </div>
     <div id="box1">
         Box One Content
     </div>
@@ -19,6 +22,40 @@
         document.querySelector('#box1').textContent = "Hello <b>DOM</b>"
         //innerHTML display HTML Element as it is
         document.querySelector('#box2').innerHTML = "Hello <b>DOM</b>"
+        
+        // Adding more Content using appendChild()
+        //create a node and store it in the variable
+        let hello = document.createTextNode("Testing createTextNode()...")
+        // select the Element to append and pass the value to append in appendChild()
+        document.querySelector('#box').appendChild(hello)
+
+        // Creating Element using createElement()
+        //created an element called b and store in variable
+        let hello_one = document.createElement("b")
+        // created a text in b Element
+        hello_one.textContent = "Testing createElement()..."
+        // select the Element to add and append the content into it
+        document.querySelector("div").appendChild(hello_one)
+
+        // //Insert new content in at position using insertBefore()
+        //  //created an element called b and store in variable
+        // let hello_two = document.createElement("b")
+        // // created a content in i Element
+        // hello_two.textContent = "Hello DOM "
+        // //select div element and store in variable
+        // let div = document.querySelector("div")
+        // //Used insertBefore() and pass the content as first argument and position as second argument
+        // div.insertBefore(hi, div.firstChild)
+
+        // Creating Element and add attributes using setAttribute()
+        //create element and store in variable
+        let hello_three = document.createElement("i")
+        //added text content in the element
+        hello_three.textContent = "Testing setAttribute()..."
+        // added title attributes and it's discription
+        hello_three.setAttribute("title", "A new element")
+        //Select the element and append the element with attribute
+        document.querySelector("div").appendChild(hello_three)
     </script>
 </body>
 </html>
