@@ -56,6 +56,16 @@
         hello_three.setAttribute("title", "A new element")
         //Select the element and append the element with attribute
         document.querySelector("div").appendChild(hello_three)
+
+        //ClassList to manage classes
+        //create an element and store in variable
+        let hello_four = document.createElement("b")
+        //added text content in the element
+        hello_four.textContent = "Testing classList.add()..."
+        //added alert and info classes using classList.add()
+        hello_four.classList.add("alert","info")
+        //select the element and append the element with classList.add()
+        document.querySelector("div").appendChild(hello_four)
     </script>
 </body>
 </html>
