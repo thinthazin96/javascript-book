@@ -17,6 +17,10 @@
         Box Two Content
     </div>
 
+    <p>
+        Accessing parentNode <b id="badge">10</b>
+    </p>
+
     <script>
         //textContent display HTML Element as a text (better option)
         document.querySelector('#box1').textContent = "Hello <b>DOM</b>"
@@ -70,6 +74,10 @@
         // Cloning the element
         // create a clone of the hello element and store in "hi" variable
         let hi = hello.cloneNode(true) //true means clone everything from hello element. false means clone Element and Attribute but not the child in it.
-    </script>
+
+        // select the parentNode of the #badge which is <p>
+        let p = document.querySelector("#badge").parentNode
+</script>
+
 </body>
 </html>
